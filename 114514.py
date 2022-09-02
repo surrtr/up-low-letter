@@ -1,4 +1,6 @@
 import sys
+import random
+
 
 logo = """
  _   _   _       _____   _____   _____   _____   _____   
@@ -16,32 +18,77 @@ PRINT_HELP = """
 -f  Convert the text from files
 """.strip()
 
+def func(text):
+    res = ""
+    for i in text:
+        if i.isalpha():
+            # print(f"i是{i}, 是字母")
+            if  random.choice([True, False]):
+                # print(1)
+                letter = i.upper()
+                res = "".join([res, letter])
+            else:
+                # print(0)
+                letter = i.lower()
+                res = "".join([res, letter])
+        else:
+            # print(f"i是{i}, 不是是字母")
+            res = "".join([res, i])
+    return res
+
+def P_text(word):
+    """
+    P_text: 打印一个带logo的提示语
+    ------------------------------------
+    其实都是混子代码（指join）
+    """
+    if word:
+        print_list = []
+        print_list.append(logo)
+        print_list.append(word)
+        w = ''
+        print(w.join(print_list))
+    else:
+        print(logo)
+
 def Target(text):
+    """
+     Target: 判断传入的参数
+    -----------------------------------
+     if嵌套 验空==>判断参数
+     (if嵌套不是好方法，小孩不要学 逃)
+    """
     print(text)
     if text:
         if text[0] == '-h':
-            print(PRINT_HELP)
+            P_text(PRINT_HELP)
 
         elif text[0] == '-t':
             print("-t")
+            res = func(text[1])
+            print(f"return: {res}")
 
             ###
         elif text[0] == '-f':
             print("-f")
-    	    ###
+            ###
 
         else:
             print(f'Invalid keyword: {text}, Maybe you can try "-h" to get help.')
 
     else:
-    	print("他是空的")
-    	print(PRINT_HELP)
-    	return 0
+        print("他是空的")
+        P_text(PRINT_HELP)
+        return 0
 
 
 def main():
+    """
+    这个不是main函数 ;)
+    This isn't a main funication
+    """
     target = sys.argv[1:] #传入参数
-    print(f"{target}")
+    print(f"main:{target}")
     Target(target)
 
 

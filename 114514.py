@@ -19,6 +19,16 @@ PRINT_HELP = """
 """.strip()
 
 def func(text):
+    """
+    核心类（core）
+    -------------------------------------
+    if嵌套 判断字母__true____lower__add
+            |    (random)|
+            |            |__upper__add
+            |
+            |____false__add 
+    (代码写的臭 if嵌套用时爽，事后一直火葬场)
+    """
     res = ""
     for i in text:
         if i.isalpha():
@@ -36,7 +46,7 @@ def func(text):
             res = "".join([res, i])
     return res
 
-def P_text(word):
+def P_text(word=''):
     """
     P_text: 打印一个带logo的提示语
     ------------------------------------
@@ -66,6 +76,7 @@ def Target(text):
         elif text[0] == '-t':
             print("-t")
             res = func(text[1])
+            P_text()
             print(f"return: {res}")
 
             ###

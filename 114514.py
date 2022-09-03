@@ -56,6 +56,8 @@ def OpenFiles(path):
         code = f.read()
     return code
 
+def Output()
+
 def P_text(word=''):
     """
     P_text: 打印一个带logo的提示语

@@ -46,6 +46,16 @@ def func(text):
             res = "".join([res, i])
     return res
 
+def OpenFiles(path):
+    """
+    OpenFiles: 打开文件
+    ------------------------------------
+    ToDO: 完善对读取文件中的异常处理
+    """
+    with open(path, 'r') as f:
+        code = f.read()
+    return code
+
 def P_text(word=''):
     """
     P_text: 打印一个带logo的提示语
@@ -82,6 +92,11 @@ def Target(text):
             ###
         elif text[0] == '-f':
             print("-f")
+            P_text("Reading files....")
+            files = OpenFiles(text[1])
+            res = func(files)
+            P_text()
+            print(f"return: {res}")
             ###
 
         else:

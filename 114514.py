@@ -66,8 +66,8 @@ def func(cont,output):
 			# print(f"i是{i}, 不是是字母")
 			res = "".join([res, i])
 	P_text(f"return:{res}")
-	print(output)
-	print(output_path)
+	# print(output)
+	# print(output_path)
 	if output:
 		OutPut(res)
 	else:
@@ -79,7 +79,7 @@ def OutPut(cont):
 	------------------------------------
 	他甚至在文件检验是否存在
 	"""
-	print(output_path)
+	# print(output_path)
 	if os.path.exists(output_path):
 		while True:
 			inp = input("The file already exists. Do you want to overwrite it(yes/no)?")

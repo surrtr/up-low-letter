@@ -104,7 +104,7 @@ def Target(text):
      if嵌套 验空==>判断参数
      (if嵌套不是好方法，小孩不要学 逃)
     """
-    print(text)
+    # print(text)
     if text:
         if '-h' in text:
             P_text(PRINT_HELP)
@@ -148,7 +148,7 @@ def main():
     This isn't a main funication
     """
     parm()
-    print(f"main:{TARGET}")
+    # print(f"main:{TARGET}")
     get = Target(TARGET)
     global OUT
     OUT = get
@@ -161,7 +161,7 @@ def del__():
     我才不会告诉你其实是因为我尝试写‘__del__’函数未果才起的这个名字
     劫持‘-o’去输出
     """
-    print("del")
+    # print("del")
     parm()
     text = TARGET
     if '-o' in text:
